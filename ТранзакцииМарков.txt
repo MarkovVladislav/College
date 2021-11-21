@@ -1,0 +1,83 @@
+DELIMITER #
+Create procedure T_markov1 (N int)
+begin
+set autocommit = 0;
+start Tansaction;
+update student_markov set Stipendiya = Stipendiya + N;
+commit;
+select  from student_markov;
+end #
+
+-- call T_markov(2);
+
+
+
+DELIMITER #
+Create procedure T_markov2 (N int, X varchar(20))
+begin
+set autocommit = 0;
+start Tansaction;
+update student_markov set PREMIYA = PREMIYA + N where Gruppa = X;
+commit;
+select  from student_markov;
+end #
+
+-- call T_markov(3, 23ao1);
+
+
+
+DELIMITER #
+Create procedure T_markov3 (N varchar(20), X varchar(20))
+begin
+set autocommit = 0;
+start Tansaction;
+update student_markov set Gruppa = N where Gruppa = X;
+commit;
+select  from student_markov;
+end #
+
+-- call T_markov(23ao1, 4p1);
+
+
+
+DELIMITER #
+Create procedure T_markov4 (N int, X varchar(20), F varchar(20))
+begin
+set autocommit = 0;
+start Tansaction;
+update student_markov set PREMIYA = PREMIYA - N where col = X;
+update student_markov set PREMIYA = PREMIYA + N where col = F;
+commit;
+select  from student_markov;
+end #
+
+-- call T_markov(9, col1, col2);
+
+
+
+DELIMITER #
+Create procedure T_markov5 (N int)
+begin
+set autocommit = 0;
+start Tansaction;
+update student_markov set PREMIYA = PREMIYA + 1000 where MMM = N;
+commit;
+select  from student_markov;
+end #
+
+-- call T_markov(1);
+
+
+
+DELIMITER #
+Create procedure T_markov6 (N int)
+begin
+set autocommit = 0;
+start Tansaction;
+update student_markov set PREMIYA = Stipendiya  0.5 where year(D_R) = N;
+commit;
+select  from student_markov;
+end #
+
+-- call T_markov(1992);
+
